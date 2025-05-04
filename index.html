@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proteção de Dados Sensíveis</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      input {
+        display: block;
+        margin: 10px 0;
+        padding: 5px;
+      }
+      #avisoPrivacidade {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      #avisoPrivacidade button {
+        margin-left: 10px;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo de Formulário com Comentários</h1>
+
+    <!-- O campo CPF exige mais cuidado porque é um dado pessoal sensível -->
+    <input type="text" name="cpf" placeholder="CPF" />
+
+    <!-- O campo senha deve ser mascarado para evitar exposição visual -->
+    <input type="password" name="senha" placeholder="Senha" />
+
+    <!-- O campo e-mail deve ser protegido contra spam e phishing -->
+    <input type="email" name="email" placeholder="E-mail" />
+
+    <!-- O endereço pode expor localização física do usuário -->
+    <input type="text" name="endereco" placeholder="Endereço" />
+
+    <div class="checklist">
+      <h3>Checklist de Boas Práticas - Dados Sensíveis</h3>
+      <ul>
+        <li>Informar o usuário sobre como os dados serão usados</li>
+        <li>Utilizar HTTPS sempre que houver envio de dados</li>
+        <li>Evitar armazenar senhas em campos visíveis</li>
+        <li>Nunca salvar dados sensíveis no LocalStorage</li>
+        <li>Sanitizar e validar entradas do usuário</li>
+        <li>Utilizar autenticação de múltiplos fatores quando possível</li>
+        <li>Evitar exibir dados sensíveis no frontend</li>
+      </ul>
+    </div>
+
+    <div id="avisoPrivacidade">
+      Este site coleta dados pessoais. Ao prosseguir, você concorda com nossa
+      <a href="#" style="color: lightblue">política de privacidade</a>.
+      <button onclick="document.getElementById('avisoPrivacidade').style.display='none'">Aceitar</button>
+    </div>
+  </body>
+</html>
